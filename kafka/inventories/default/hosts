@@ -1,18 +1,18 @@
 [kafka-servers]
-10.178.1.37 kafka_broker_id=1 ansible_connection=ssh ansible_ssh_user=wasadm  host_key_checking=False ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-10.178.1.38 kafka_broker_id=2 ansible_connection=ssh ansible_ssh_user=wasadm  host_key_checking=False ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-10.178.1.39 kafka_broker_id=3 ansible_connection=ssh ansible_ssh_user=wasadm  host_key_checking=False ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+IP1 kafka_broker_id=1 ansible_connection=ssh ansible_ssh_user=wasadm  host_key_checking=False ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+IP2 kafka_broker_id=2 ansible_connection=ssh ansible_ssh_user=wasadm  host_key_checking=False ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+IP3 kafka_broker_id=3 ansible_connection=ssh ansible_ssh_user=wasadm  host_key_checking=False ansible_ssh_common_args='-o StrictHostKeyChecking=no'
 
 [zookeeper-nodes]
-10.178.1.34 zookeeper_id=1
-10.178.1.35 zookeeper_id=2
-10.178.1.36 zookeeper_id=3
+IP1 zookeeper_id=1
+IP2 zookeeper_id=2
+IP zookeeper_id=3
 
 [kafka-nodes]
-kafka-1 kafka_broker_id=1 kafka_listener_hostname=10.178.1.37
-kafka-2 kafka_broker_id=2 kafka_listener_hostname=10.178.1.38
-kafka-3 kafka_broker_id=3 kafka_listener_hostname=10.178.1.39
+kafka-1 kafka_broker_id=1 kafka_listener_hostname=-------
+kafka-2 kafka_broker_id=2 kafka_listener_hostname=-------
+kafka-3 kafka_broker_id=3 kafka_listener_hostname=------
 
 [kafka-nodes:vars]
-kafka_zookeeper_connect='10.178.1.34:2181,10.178.1.35:2181,10.178.1.36:2181'
-kafka_bootstrap_servers='10.178.1.37:9092,10.178.1.38:9092,10.178.1.39:9092'
+kafka_zookeeper_connect='XXXXXX:2181,XXXXXXX:2181,XXXXXX:2181'
+kafka_bootstrap_servers='XXXXXX:9092,XXXXXXX:9092,XXXXXX:9092'
