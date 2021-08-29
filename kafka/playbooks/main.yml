@@ -1,0 +1,13 @@
+- hosts: kafka-servers
+  become: yes
+  become_user: root
+  handlers:
+  - import_tasks: ../handlers/main.yaml
+  vars_files:
+    - "../inventories/default/group_vars/cluster.yml"
+  tasks:
+  - name: install kafka clusters
+    include_tasks: "{{ item }}"
+    loop:
+      - ../tasks/java_install.yaml
+      - ../tasks/main.yaml
